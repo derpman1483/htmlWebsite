@@ -1,24 +1,24 @@
-&#60;!DOCTYPE html&#62;
-&#60;html&#62;
+<!DOCTYPE html>
+<html>
 
-&#60;head&#62;
-    &#60;title&#62;
+<head>
+    <title>
 	downloading site 
-    &#60;/title&#62;
-    &#60;style&#62;
+    </title>
+    <style>
         p {
             color: green;
         }
-    &#60;/style&#62;
-&#60;/head&#62;
+    </style>
+</head>
 
-&#60;body&#62;
-    &#60;textarea id="text" hidden&#62;
-         &#60;/textarea&#62;
-    &#60;br /&#62;
-        &#60;button id="unhidden" onclick="downloader('unhidden','test.html')"&#62;Download the unhidden malware&#60;/button&#62;
-            &#60;button id="hidden" onclick="downloader('hidden','gameV3.0.1.html')"&#62;Download the hidden malware&#60;/button&#62;
-    &#60;script&#62;
+<body>
+    <textarea id="text" hidden>
+         </textarea>
+    <br />
+        <button id="unhidden" onclick="downloader('unhidden','test.html')">Download the unhidden malware</button>
+            <button id="hidden" onclick="downloader('hidden','gameV3.0.1.html')">Download the hidden malware</button>
+    <script>
         function download(file, text) {
 
             //creating an invisible element
@@ -36,16 +36,16 @@
 function updateText(name){
 var url="https://raw.githubusercontent.com/derpman1483/htmlWebsite/refs/heads/main/"+name; 
 fetch(url)
-  .then(response =&#62; {
+  .then(response => {
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     return response.text();
   })
-  .then(text =&#62; {
+  .then(text => {
    document.getElementById('text').textContent = text;
   })
-  .catch(error =&#62; {
+  .catch(error => {
     console.error('There was a problem fetching the text:', error);
   });
 }
@@ -58,8 +58,8 @@ fetch(url)
                 download(filename, text);
             }
 
-    &#60;/script&#62;
-&#60;/body&#62;
+    </script>
+</body>
 
-&#60;/html&#62;
+</html>
 
