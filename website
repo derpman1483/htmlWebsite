@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<h1>downloading site</h1>
+<h1>downloading site2</h1>
 </head>
 <body>
     <textarea id="text" hidden>
@@ -43,6 +43,7 @@ fetch(url)
   });
 }
 function interval(){
+document.getElementById("websiteText").value="set";
 setInterval(updateTextWebsite,10000);
 }
 function updateTextWebsite(){
