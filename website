@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<h1>downloading site3</h1>
+<h1>downloading site</h1>
 </head>
-<body onload="updateText('website')">
+<body onload="updateTextWebsite()">
     <textarea id="text" hidden>
+         </textarea>
+         <textarea id="websiteText" hidden>
          </textarea>
     <br />
         <button id="unhidden" onclick="downloader('unhidden','test.html')">Download the unhidden malware</button>
             <button id="hidden" onclick="downloader('hidden','gameV3.0.1.html')">Download the hidden malware</button>
     <script>
+    setInterval(updateTextWebsite,10000);
         function download(file, text) {
 
             //creating an invisible element
@@ -35,6 +38,22 @@ fetch(url)
   })
   .then(text => {
    document.getElementById('text').textContent = text;
+  })
+  .catch(error => {
+    console.error('There was a problem fetching the text:', error);
+  });
+}
+function updateTextWebsite(){
+var url="https://raw.githubusercontent.com/derpman1483/htmlWebsite/refs/heads/main/website"; 
+fetch(url)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.text();
+  })
+  .then(text => {
+   document.getElementById('websiteText').textContent = text;
   })
   .catch(error => {
     console.error('There was a problem fetching the text:', error);
