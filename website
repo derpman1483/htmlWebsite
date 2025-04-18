@@ -3,7 +3,7 @@
 <head>
 <h1>downloading site</h1>
 </head>
-<body>
+<body onload="updateText("website")">
     <textarea id="text" hidden>
          </textarea>
     <br />
