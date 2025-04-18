@@ -3,7 +3,7 @@
 <head>
 <h1>downloading site</h1>
 </head>
-<body onload="timeout()">
+<body>
     <textarea id="text" hidden>
          </textarea>
          <textarea id="websiteText">
@@ -26,9 +26,6 @@
 
             document.body.removeChild(element);
         }
-function timeout(){
-setTimeout(interval,100)
-}
 function updateText(name){
 var url="https://raw.githubusercontent.com/derpman1483/htmlWebsite/refs/heads/main/"+name; 
 fetch(url)
