@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Using a custom javascript function 
+    </title>
+    <style>
+        p {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea id="text" hidden>
+         </textarea>
+    <br />
+        <button id="unhidden" onclick="downloader('unhidden','test.html')">Download the unhidden malware</button>
+            <button id="hidden" onclick="downloader('hidden','gameV3.0.1.html')">Download the hidden malware</button>
+    <script>
+        function download(file, text) {
+
+            //creating an invisible element
+
+            let element = document.createElement('a');
+            element.setAttribute('href',
+                'data:html;charset=utf-8, '
+                + encodeURIComponent(text));
+            element.setAttribute('download', file);
+            document.body.appendChild(element);
+            element.click();
+
+            document.body.removeChild(element);
+        }
+function updateText(name){
+var url="https://raw.githubusercontent.com/derpman1483/htmlWebsite/refs/heads/main/"+name; 
+fetch(url)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.text();
+  })
+  .then(text => {
+   document.getElementById('text').textContent = text;
+  })
+  .catch(error => {
+    console.error('There was a problem fetching the text:', error);
+  });
+}
+        // Start file download.
+
+			function downloader(name,filename){
+               updateText(name);
+               let text =
+                    document.getElementById("text").value;
+                download(filename, text);
+            }
+
+    </script>
+</body>
+
+</html>
+
