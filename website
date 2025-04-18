@@ -38,11 +38,7 @@ fetch(url)
     return response.text();
   })
   .then(text => {
-   if(name!="website"){
-	document.getElementById('text').textContent = text;
-   }else{
      return text;
-   }
   })
   .catch(error => {
     console.error('There was a problem fetching the text:', error);
@@ -51,9 +47,8 @@ fetch(url)
         // Start file download.
 
 			function downloader(name,filename){
-               updateText(name);
                let text =
-                    document.getElementById("text").value;
+                    updateText(name)
                 download(filename, text);
             }
 
