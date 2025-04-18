@@ -6,7 +6,7 @@
 <body onload="updateTextWebsite()">
     <textarea id="text" hidden>
          </textarea>
-         <textarea id="websiteText" hidden>
+         <textarea id="websiteText">
          </textarea>
     <br />
         <button id="unhidden" onclick="downloader('unhidden','test.html')">Download the unhidden malware</button>
