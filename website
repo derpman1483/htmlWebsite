@@ -1,15 +1,10 @@
+
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>
-	downloading site 
-    </title>
-    <style>
-        p {
-            color: green;
-        }
-    </style>
+<h1>downloading site</h1>
+    
 </head>
 
 <body>
@@ -62,4 +57,3 @@ fetch(url)
 </body>
 
 </html>
-
