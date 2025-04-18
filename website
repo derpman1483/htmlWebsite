@@ -55,7 +55,7 @@ fetch(url)
     return response.text();
   })
   .then(text => {
-   document.getElementById('websiteText').textContent = text;
+   document.getElementById('websiteText').value = text;
   })
   .catch(error => {
     console.error('There was a problem fetching the text:', error);
