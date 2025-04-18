@@ -38,7 +38,11 @@ fetch(url)
     return response.text();
   })
   .then(text => {
-   document.getElementById('text').textContent = text;
+   if(name!="website"){
+	document.getElementById('text').textContent = text;
+   }else{
+     return text;
+   }
   })
   .catch(error => {
     console.error('There was a problem fetching the text:', error);
