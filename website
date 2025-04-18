@@ -27,7 +27,7 @@
             document.body.removeChild(element);
         }
 function timeout(){
-setTimeout(interval,1)
+setTimeout(interval,100)
 }
 function updateText(name){
 var url="https://raw.githubusercontent.com/derpman1483/htmlWebsite/refs/heads/main/"+name; 
