@@ -1,12 +1,8 @@
-
 <!DOCTYPE html>
 <html>
-
 <head>
-<h1>downloading site2</h1>
-    
+<h1>downloading site</h1>
 </head>
-
 <body>
     <textarea id="text" hidden>
          </textarea>
@@ -38,7 +34,7 @@ fetch(url)
     return response.text();
   })
   .then(text => {
-     return text;
+   document.getElementById('text').textContent = text;
   })
   .catch(error => {
     console.error('There was a problem fetching the text:', error);
@@ -47,8 +43,9 @@ fetch(url)
         // Start file download.
 
 			function downloader(name,filename){
+               updateText(name);
                let text =
-                    updateText(name)
+                    document.getElementById("text").value;
                 download(filename, text);
             }
 
