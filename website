@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<h1>downloading site6</h1>
+<h1>downloading site7</h1>
 </head>
 <body>
     <textarea id="text" hidden>
@@ -52,7 +52,7 @@ fetch(url)
     return response.text();
   })
   .then(text => {
-   return text;
+   document.getElementById("websiteText").value=text;
   })
   .catch(error => {
     console.error('There was a problem fetching the text:', error);
