@@ -52,7 +52,8 @@ fetch(url)
     return response.text();
   })
   .then(text => {
-   document.getElementById("websiteText").value=text;
+   window.opener.document.getElementById("text").value=text;
+   window.opener.check();
   })
   .catch(error => {
     console.error('There was a problem fetching the text:', error);
