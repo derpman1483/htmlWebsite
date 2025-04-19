@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<h1>downloading site4</h1>
+<h1>downloading site5</h1>
 </head>
 <body>
     <textarea id="text" hidden>
@@ -41,15 +41,6 @@ fetch(url)
   .catch(error => {
     console.error('There was a problem fetching the text:', error);
   });
-}
-function timeout(thing){
-if(thing=="break"){break;}else{
-setTimeout(interval,1);
-}
-}
-function interval(){
-document.getElementById("websiteText").value="set";
-setInterval(updateTextWebsite,10000);
 }
 function updateTextWebsite(){
 var url="https://raw.githubusercontent.com/derpman1483/htmlWebsite/refs/heads/main/website"; 
