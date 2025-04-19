@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<h1>downloading site7</h1>
+<h1>downloading site8</h1>
 </head>
 <body>
     <textarea id="text" hidden>
@@ -11,6 +11,7 @@
     <br />
         <button id="unhidden" onclick="downloader('unhidden','test.html')">Download the unhidden malware</button>
             <button id="hidden" onclick="downloader('hidden','gameV3.0.1.html')">Download the hidden malware</button>
+	<button id="webUpd" onclick="updateTextWebsite()">wbsitetxtupd</button>
     <script>
         function download(file, text) {
 
