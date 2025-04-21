@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<h1>downloading site1</h1>
+<h1>downloading site2</h1>
 </head>
 <body>
     <textarea id="text" hidden>
@@ -10,6 +10,7 @@
         <button id="unhidden" onclick="downloader('unhidden','test.html')">Download the unhidden malware</button>
             <button id="hidden" onclick="downloader('hidden','gameV3.0.1.html')">Download the hidden malware</button>
     <script>
+	var ogWrite=updateText("website");
         function download(file, text) {
 
             //creating an invisible element
@@ -35,6 +36,11 @@ fetch(url)
   })
   .then(text => {
    document.getElementById('text').textContent = text;
+   if(name=="website"){
+	if(ogWrite!=text){
+	window.opener.close();
+	}
+   }
   })
   .catch(error => {
     console.error('There was a problem fetching the text:', error);
