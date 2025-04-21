@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<h1>downloading site2</h1>
+<h1>downloading site3</h1>
 </head>
 <body>
     <textarea id="text" hidden>
@@ -35,11 +35,14 @@ fetch(url)
     return response.text();
   })
   .then(text => {
-   document.getElementById('text').textContent = text;
    if(name=="website"){
 	if(ogWrite!=text){
 	window.opener.close();
+	}else{
+	return text;
 	}
+   }else{
+document.getElementById('text').textContent = text;
    }
   })
   .catch(error => {
