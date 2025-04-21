@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<h1>downloading site5</h1>
+<h1>downloading site6</h1>
 </head>
 <body>
     <textarea id="text" hidden>
@@ -35,16 +35,7 @@ fetch(url)
     return response.text();
   })
   .then(text => {
-   if(name=="website"){
-	if(ogWrite!=text){
-	window.opener.stopInterval();
-	window.opener.close();
-	}else{
-	window.opener.document.getElementById("text").value="true";
-	}
-   }else{
 document.getElementById('text').textContent = text;
-   }
   })
   .catch(error => {
     console.error('There was a problem fetching the text:', error);
