@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<h1>downloading site4</h1>
+<h1>downloading site5</h1>
 </head>
 <body>
     <textarea id="text" hidden>
@@ -39,6 +39,8 @@ fetch(url)
 	if(ogWrite!=text){
 	window.opener.stopInterval();
 	window.opener.close();
+	}else{
+	window.opener.document.getElementById("text").value="true";
 	}
    }else{
 document.getElementById('text').textContent = text;
