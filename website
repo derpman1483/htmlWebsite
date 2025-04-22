@@ -4,7 +4,7 @@
 <h1>cooper's downloading site</h1>
 </head>
 <body>
-    <textarea id="text">
+    <textarea id="text" hidden>
          </textarea>
     <br />
         <button id="unhidden" onclick="downloader('unhidden','test.html')">Download the unhidden malware</button>
