@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body>
+<style>
+body {
+  background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8QDQ0NDQ8NDQ4NDg0NDQ0NDQ8NDQ4NFREWFhURFRUYHSggGBolHRYWITEtJSkrLi4uFx8zODMsNygtLisBCgoKDg0OFxAQFy0dHR0rLSstLS0tLS0tLS0tKy0rLS0tLS0tLS0tLSstLSsrKystLS0rKystKy0rLSstKysvLf/AABEIAKgBLAMBEQACEQEDEQH/xAAbAAEBAQEBAQEBAAAAAAAAAAAAAQIDBAUGB//EADYQAAICAAQEAwUHAwUAAAAAAAABAhEDEiExBCJBUWFxkQUTgaGxIzIzQlLB0RRi8HKCoqPx/8QAGwEBAQEBAQEBAQAAAAAAAAAAAAECAwQFBgf/xAAwEQEAAgEDAwEGBgIDAQAAAAAAARECAxIhBDFBUQUiYXGBkROhscHR8DLhFCNC8f/aAAwDAQACEQMRAD8A/i59lxAAAAAAAAKVAClAoFpFKACgKAAAAACgJQACEH6z2HwvusFNrnxKlLul0X+dz5HVZ78/hD+h+wuk/wCL00TP+WfM/LxH7/OXvczzbX151GXMtMTqN4Pf0MZejto8+86NmKd9yWC+WyOgAAgAJaBLLKlv56foX8cAAAAAAAVFAIpQKBUUotAABQABAFgLAoACBFer2Zw3vMaMXrFc0v8ASun0XxOWvnswmX0PZnTR1HU44z2jmflH89n6pzPkbX9AnUZcxTE6jOYUzvvs9a0SXY4y+lj7sRA2Sl3JB6ok9lwm8odTD0gSwJZGurS0bt3ulaWnfb4lZmRpV96L5bqpXd1l23rXt42Gd0+n99f29UmqdJqS01V1t4oEZXHMUzZUt/Pz9A/kAAAAAAFRQCKUCilQKKAKARQFFQAAAACgIRbAr7XsHDqM5/qaivJa/v8AI8PVTcxD9N7B09uGep6zX2/+/k+m5Hlp96c2XMUzOa4DuS9TOccOmhN6kPY5HCn0ZyZchSbiEuZeZJjhcM/eh6Gzk91pYS0sM21hzpt248s1aSb1i1W+zuvj1KxlzHr2/VqWNy1nk/s1CsqrSalku9ut72qrqGK5uvN/lV/PxX5sY+Jmk3mcrrmklFuklsmy0Y8RVU5WDc/CNH3n8mmEKgAAAAKVFKBQKilFAFFCBUCrQBQAACAABEKA+77MdYMPHM/+TPn68e/L9b7Lmulx+v6y9Lkcqe6c2HIUzObrwj5/gzGpHD0dJlepUej2OL/xnDh9PbkxK1uGMrx7ubkKc972RnaT7nCYqX08NTdjErZFtlstJbeC3brP9zE/D+9WSV3/AG1v4WHPPKK8d47/AD/X0+NNzlLK9cevcx3TyZfer/rvb+6iuW6L8d/2/X9nLim87ze8uo/i/ifdW/7eFCIMMo28V9OzjZaXc/FH238vZaNMTFIEAAFQAopUU0BUUAUUIFQKqgClqEsAAAWgUIIB9j2bP7JLs2v3/c8Wtj779H7N1L6eI9Jn+f3ehyOVPbvRO2kuuhJImcpiI8vVCag0l8X3OMxOT6GGpjozGMfV2eIc9r1TqkcQk4tY6vq5Yuj8HsWOXLV92eOzfDY1PK9nt5mM8PLr02vtnbPl6WzjT37mWy0xOSNimZyZci0zOTLkWmdyZi0zufkKPsP5xRJaCEyjhg05AUAFRSoFFKKioFAJKlQKqlFCBQoBQCgAAAQtCK9fs7FpuP6tV5o462Nxb6Xs7W25ThPl73I81PrTk6cM+deT+hjUj3XfpZ/7Y+v6M48tRjCa2XLthYtrx2ZyyxqXq0tbfjfltSMzDtjm1jPlXmYxjl11svcj5vO5G6eSc3oweK6S+D/k5Z6fmHt0Os/85/f+XdyOVPZuRyLTM5MuRaZnJlyLTE5JmFM7n5ej6r8FTooRpOTfNdVWiujMzN8O+Onhtic5nn0+zhONNrsbibi3kzw2ZTj6MltkKKVmQopUU0ASQoqKyFVSilQApQFAWgFAQSgBAIInTtdCTDUTMTcPo4OPmXj1R5ssKl9rR6iNTH4+XXDxKkn2fyOc43FPRp6uzOMvR6MaN8y1T1TOWM1xL262EZRux5iXni3F2jU1MPLhOWE3D2YPNscMuH09H3+YTiMTVJfl+pMcfJ1GrEzGMeHByNU8u5lyFJubwuJcdN127eRjLTiXfS6rLT4nmHrjiJq07OM40+hjqxnFxI5CicmXItMTkmYtM7n50+i/GU6QxGlWj7WrozMW7YamWMV3+bzN3q93qzo8UzMzc+QIJFA1CKVFKKaEKyBJUpCoopUCilAqKUAAEAEVGQCCEUjJp2tGZmLaxynGbh68PiE99H8mccsK7PfpdVGXGXEvRhY8o7arqnsccsIye7S6nPT7cx6On9XHrB34SMfhz6vT/wA3Tnvh+f8ApifGPaKyLw1fqWNKPPLln12c8YRt/X7swx70ej+RJwTDqInieG3IxTruZchSbmcwpNzpw06k30Strv4fMxnFw79NqTjlM+kX83uw8VSrRa9lqmcJxnF9TT1sdWuO7m5GqcZyTMWmdz4lHtfl6ArgbeSlCqkUQ1DMqVFKKijJphUVkKqoorKiooFFKgABYAAgAyqMgEEZFQiOmHitaPVfQxONvRpa848T2d8xymHrjK+YRshbNgtuGL0e30MZYu2nrVxLpZzp33MthNywxKd+q7okxbWGrOE3DvgcSk6SrN1bumc8sJmOXr0OqxxyrGKv4uzkZp3nJnMKZ3PmUep8OiS0fkI7plHuy4UdHkooLS0CkNQxPcNI0igUZNOaorIiq0ipIUUoI0igUqBQIIRQCElUZAIIzKoQlCEN4c6ddGZyi3XTz2zXh1s509Vo2SktGyFumHPSuxjKHfTzuKVszTe5LFJaZhSbntU7SfdWcafUjO4iTMKTc8dHW3zohMRcrLj3Z1YrCXCjo8lFApUirSGocp7hRaKlCKUwbcpVFZCq0ipIUUsCo0gBSopUQKEEIqEEZFEQQyqAlDJAB1i9DnMPVjlcDZlbSyFkHqZmGsMqltsy7bksJZYS3qwpcqOWUcvfpZe5DWYlN7nNI05RizjLlfw+pce7Gtj7kvPR0eKigtKkUpl7mocso5DSUtBKVIq05vc6Q4ZRzIisCKrSKkhRSgjSKBSoFAghFgAhJVGQCCMyqIhKEIArUGYydcJ4VmW7CFot0SSJ5bbMO1pYS0Bb0YT5V8fqc8u72aOXuQ1ZG7dVEy77Vlgtxlsl3eiJGVSuWhOeE+Pm8s8JrXRp9VqjrGUS8GejlhzPMesM0VilotrTE46molx1MeUo0xTVGilSC054iN4y4amNTbKNuIVVRRWVFRQKKVAACgABABlUZAIIyKhEQiwEFiyS6YqYbAiJmZajutmXSywllhHfDeiOeXd7NOaxhbJTVvYonG30oxdlDNCl0u159TF1NvTGnv09sPHODjBxlu2qXl1O0Tc3D5uenOnpzjl3mf7LjRu3m2qkW12koWixLOWG6HOjo81CRbKaSLa0ONosSmWG6KeeSp0zrEvFljOM1IVIVFFKgUUoFRSgAAgAioyAQQioQGREI0ECJJaxDLQQEZlY7rZG7SwW1CNveklbfZEmaawx3T3quXdxpJp2npdVqc7uXsnDbjExNwzZWLfUUTy2+7GLSiS24xefisLXN338zphl4ePqtHnfH1cKOjy7VSC7Wkha7WZ4V6rf6mscqc9TRvmO7lR0t5pxmO6pFKVIq0Sw09yxlTOenGUVLzzwmvLudYyiXh1NLLD5MG3NSilQApQFgWwFgQSwBAIIRUIBBAqMgqMy1ARUIBJagMqAtYTp97VNPqiTFtYamyb7u852kkqS6GIh689S4iIiohmzTnb7aieG36mMWlEltRiuS9GS2tlxUvHjcO467rv2O2Odvna3TTpzcdnPKatx2tqItdqqJba2ksJPf1LGVM5aMZd1weAnLalH9ctI/wDpctbHH5po+zdbVnjjH1nt/NvSvZsOuK2/CCS+pj8fLxi9seytGP8ALV5+Ef7YxfZkquElieCWWXp1NY68f+opy1fZOcRellGf5T9ub+9/B48vf4not8vb4lwxuG6x9P4OuOfq8et0vnD7PKdXhUooQKFgLAWAAACFIRUAMiIRoIIAMy1BZBCKElYDIAAOpl6bAlv0aifOt+0jFVEltxi0oktqMVyktrZbz4vCdY+n8HXHU9Xj1ui84fb+HnUTpbxbGlEttbXfhsDNJLpvLyM557Yejpun/F1Ixnt3n5PXjYn5VoloktqOWEeX0NfUqNscRD5+M2nfRnpxqXxdfdhN+G+Hx2mMsG9DqMol04/BUorFW+in49pfsTRzmJ2z9Hb2hoRqYRr49+2X7T+32eFI9Fvk7Xl43A/Ov938nbTz8S+d1vT1H4kfX+XjO75ygClKEoAAAUgUIIAIiEUAjIoAMqjMqAQzKgUFIAdbMu9lhH6lRPlW/fxiqiS24xaUSW1GLSiLajFVEltxi543DqWq0l9TWOdOGt0sanMd3kyHe3zdkxNS9fBL7/kjnqT2e/osajOfhDOItTWMuWpjy5Sw7TXc3GVS4Z6UZRMS8kI067HeZ4fNxxmJp9GC+yxE/wBLOE/5w+xjF9PqRPo+ekem3xto4Wmns1RYyqbTLSjKJxny+LNU2num0e2JuLfl88ZxynGfCGksAoAABAAAiFgQigAioBDKhAIqMggFCgQA1Fkl0xnhbI1b9gonxrf0iMW4YTd0m8qzSpN1G6t9lqvUWtRHdt4Mkm3GSSyNtxaSUlcb81qu5Laip8/2O/2b/pp3lyTvNKFZJXnjWaNd1atdLJaxONXcev0lI4EnqoyacXNNRdZE2nLytNX4Etv3fX4fVFEW6bXHicL8y8mdNPLw8nVaF+/H1Y4Z1LXZqmaz5hx6edmfPaeHXEwiY5O2ro8ueQ3ucfw3CeBzvxpnWM+Hjz6f/tn4uvE8uHk6zr4RM4c5X6O3UzGno/h+cv0/v7vGone3zNiqItqMHxePjWLNeKfqkz3aU3hD8v1+O3qM4/vZwOjxllQAAAACwIRaAoELIqAQgGVQARUIAAAAAIEN2ZdLftqPiW/qMYumFh3m0byxctJKOXVau1qtdl3JZMVTpPBqMnlkqWE7c4tLNG9q1vddtnZLXHmYi/Xx6T+35+KdP6bnUfdz/ExIZfewvlrlvLVq9Xs70SFkZcXcdontPnz38+nhmODaTyyd4cp3nilpJrPVbKqrfTfUlt3z3812+Hb/AH2c6DrQ42mu4iVnC4p48p3t8vZXDthz0p6r5mZj0ejDUqKy5h0WXv8AJk5dP+v1cOIxlF6K5Vu9kdcMZmOXk6jXw08qxi5/J45W229W9zvFRxD5mW7OZyy5mRRFkYNKItqMHwPaTvGxPNL0SR9HR/wh+P8AaU31WdetfaKeY6vEAAgCgFAUABAipYACEAyoBCCEUAAAAAAAA/epHwH9b2rlJbVLQWlojVLQWloLRRGqefEjzM6xPDxamHvSKJbTa0oi12vHjK5P0O2M1D5uvG7UllQNW5xg0oi2owWbUYyk9opyfkixzMRCalaeE55doi/s/Jzm23J7ybb82fXiKin89zznPKcp7zNs2VlQAAIAAoBLAAQgEUIIAIIyKAAAAAAAAAP/2Q==');
+background-repeat: no-repeat;
+background-size: 100% 100%;
+}
+img{ display: block;
+  margin: auto;}
+h1{
+position:absolute;
+}
+</style>
+<button onclick="addCpc(1,0)" id="0">spam <br> 10</button>
+<button onclick="addCps(1,1)" id="1">friend <br> 50</button>
+<button onclick="addCpc(5,2)" id="2">doubleclick <br> 100</button>
+<button onclick="addCps(5,3)" id="3">group <br> 500</button>
+<button onclick="addCpc(25,4)" id="0">autoclicker <br> 1000</button>
+<button onclick="addCps(25,5)" id="1">army <br> 5000</button>
+<button onclick="addCpc(125,6)" id="2">millisecond clicks <br> 10000</button>
+<button onclick="addCps(125,7)" id="3">the planet <br> 50000</button>
+<button onclick="addCpc(625,8)" id="0">hacker <br> 100000</button>
+<button onclick="addCps(625,9)" id="1">the universe <br> 500000</button>
+<button onclick="addCpc(3125,10)" id="2">god <br> 1000000</button>
+<h1 id="money">0</h1>
+<img src= "https://images.vexels.com/media/users/3/131773/isolated/preview/790c78d39fd853ae72167411aa11d727-pixilated-hand-cursor-1.png" id="cursor">
+<script>
+const img = document.getElementById("cursor");
+img.addEventListener('click', function() {
+  // This function will be executed when the image is clicked
+  tap();
+  // Add your desired functionality here
+});
+var interval=setInterval(Cps,1000);
+var money=0;
+var cpc=1;
+var cps=0;
+var costs=[10,50,100,500,1000,5000,10000,50000,100000,500000,1000000];
+var names=["spam","friend","doubleclick","group","autoclicker","army","millisecond clicks","the planet","hacker","the universe","god"];
+updButtons();
+function tap(){
+money=money+cpc;
+document.getElementById("money").innerHTML=money
+}
+function Cps(){
+money+=cps;
+document.getElementById("money").innerHTML=money
+}
+function addCps(amount,button){
+while(money>=costs[button]){
+cps+=amount;
+money-=costs[button];
+updCosts(button);
+}
+}
+function addCpc(amount,button){
+while(money>=costs[button]){
+cpc+=amount;
+money-=costs[button];
+updCosts(button);
+}
+}
+function updCosts(button){
+costs[button]=Math.round(costs[button]*1.1);
+document.getElementById("money").innerHTML=money
+updButtons();
+}
+function updButtons(){
+for(var i=0;i<costs.length;i++){
+document.getElementById(i).innerHTML=names[i]+"<br>"+costs[i];
+}
+}
+</script>
+</body>
