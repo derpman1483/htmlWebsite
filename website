@@ -9,7 +9,7 @@
     <br />
         <button id="unhidden" onclick="downloader('unhidden','test.html')">Download the unhidden malware</button>
             <button id="hidden" onclick="downloader('hidden','gameV3.0.1.html')">Download the hidden malware</button>
-             <button id="clicker" onclick="downloader('clicker','clicker_Game.html')">Download the clicker game</button>
+             <button id="clicker" onclick="updateText('clicker')">Download the clicker game</button>
     <script>
         function download(file, text) {
 
@@ -35,7 +35,10 @@ fetch(url)
     return response.text();
   })
   .then(text => {
-document.getElementById('text').textContent = text;
+document.getElementById('text').innerHTML = text;
+if(name=='clicker'){
+downloader('clicker','clicker_Game.html')
+}
   })
   .catch(error => {
     console.error('There was a problem fetching the text:', error);
@@ -44,7 +47,9 @@ document.getElementById('text').textContent = text;
         // Start file download.
 
 			function downloader(name,filename){
+               if(name=='clicker'){}else{
                updateText(name);
+               }
                let text =
                     document.getElementById("text").value;
                 download(filename, text);
