@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<h1>cooper's downloading site</h1>
+<h1>cooper's downloading site2</h1>
 </head>
 <body>
-    <textarea id="text" hidden>
+    <textarea id="text">
          </textarea>
     <br />
         <button id="unhidden" onclick="updateText('unhidden')">Download the unhidden malware</button>
