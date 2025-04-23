@@ -7,9 +7,9 @@
     <textarea id="text">hs
          </textarea>
     <br />
-        <button id="unhidden" onclick="updateText('unhidden')">Download the unhidden malware</button>
-            <button id="hidden" onclick="updateText('hidden')">Download the hidden malware</button>
-             <button id="clicker" onclick="updateText('clicker')">Download the clicker game</button>
+        <button id="unhid" onclick="updateText('unhidden')">Download the unhidden malware</button>
+            <button id="hid" onclick="updateText('hidden')">Download the hidden malware</button>
+             <button id="click" onclick="updateText('clicker')">Download the clicker game</button>
     <script>
         function download(file, text) {
 
@@ -57,7 +57,7 @@ downloader('unhidden','test.html');
 			function downloader(name,filename){
                let text =
                     document.getElementById("text").value;
-                download(filename, text);
+                //download(filename, text);
             }
 
     </script>
