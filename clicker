@@ -18,13 +18,13 @@ position:absolute;
 <button onclick="addCps(1,1)" id="1">friend <br> 50</button>
 <button onclick="addCpc(5,2)" id="2">doubleclick <br> 100</button>
 <button onclick="addCps(5,3)" id="3">group <br> 500</button>
-<button onclick="addCpc(25,4)" id="0">autoclicker <br> 1000</button>
-<button onclick="addCps(25,5)" id="1">army <br> 5000</button>
-<button onclick="addCpc(125,6)" id="2">millisecond clicks <br> 10000</button>
-<button onclick="addCps(125,7)" id="3">the planet <br> 50000</button>
-<button onclick="addCpc(625,8)" id="0">hacker <br> 100000</button>
-<button onclick="addCps(625,9)" id="1">the universe <br> 500000</button>
-<button onclick="addCpc(3125,10)" id="2">god <br> 1000000</button>
+<button onclick="addCpc(25,4)" id="4">autoclicker <br> 1000</button>
+<button onclick="addCps(25,5)" id="5">army <br> 5000</button>
+<button onclick="addCpc(125,6)" id="6">millisecond clicks <br> 10000</button>
+<button onclick="addCps(125,7)" id="7">the planet <br> 50000</button>
+<button onclick="addCpc(625,8)" id="8">hacker <br> 100000</button>
+<button onclick="addCps(625,9)" id="9">the universe <br> 500000</button>
+<button onclick="addCpc(3125,10)" id="10">god <br> 1000000</button>
 <h1 id="money">0</h1>
 <img src= "https://images.vexels.com/media/users/3/131773/isolated/preview/790c78d39fd853ae72167411aa11d727-pixilated-hand-cursor-1.png" id="cursor">
 <script>
