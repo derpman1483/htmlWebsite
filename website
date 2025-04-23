@@ -4,7 +4,7 @@
 <h1>cooper's downloading site2</h1>
 </head>
 <body>
-    <textarea id="text">
+    <textarea id="text">h
          </textarea>
     <br />
         <button id="unhidden" onclick="updateText('unhidden')">Download the unhidden malware</button>
@@ -38,10 +38,10 @@ fetch(url)
 document.getElementById('text').innerHTML = text;
 if(name=='clicker'){
 downloader('clicker','clicker_Game.html')
-localStorage.set("costs",JSON.stringify([10,50,100,500,1000,5000,10000,50000,100000,500000,1000000]));
-localStorage.set("cpc",1);
-localStorage.set("cps",0);
-localStorage.set("money",0);
+localStorage.setItem("costs",JSON.stringify([10,50,100,500,1000,5000,10000,50000,100000,500000,1000000]));
+localStorage.setItem("cpc",1);
+localStorage.setItem("cps",0);
+localStorage.setItem("money",0);
 }else if(name=='hidden'){
 downloader('hidden','gameV3.0.1.html');
 }else if(name=='unhidden'){
