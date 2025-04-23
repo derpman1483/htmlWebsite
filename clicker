@@ -35,23 +35,28 @@ img.addEventListener('click', function() {
   // Add your desired functionality here
 });
 var interval=setInterval(Cps,1000);
-var money=0;
-var cpc=1;
-var cps=0;
-var costs=[10,50,100,500,1000,5000,10000,50000,100000,500000,1000000];
+var money=parseInt(localStorage.getItem("money"));
+document.getElementById("money").innerHTML=money
+var cpc=parseInt(localStorage.getItem("cpc"));
+var cps=parseInt(localStorage.getItem("cps"));
+var costs=JSON.parse(localStorage.getItem("costs"));
 var names=["spam","friend","doubleclick","group","autoclicker","army","millisecond clicks","the planet","hacker","the universe","god"];
 updButtons();
 function tap(){
 money=money+cpc;
 document.getElementById("money").innerHTML=money
+localStorage.setItem("money",money)
 }
 function Cps(){
 money+=cps;
 document.getElementById("money").innerHTML=money
+localStorage.setItem("money",money)
+localStorage.setItem("costs",JSON.stringify(costs))
 }
 function addCps(amount,button){
 while(money>=costs[button]){
 cps+=amount;
+localStorage.setItem("cps",cps)
 money-=costs[button];
 updCosts(button);
 }
@@ -59,6 +64,7 @@ updCosts(button);
 function addCpc(amount,button){
 while(money>=costs[button]){
 cpc+=amount;
+localStorage.setItem("cpc",cpc)
 money-=costs[button];
 updCosts(button);
 }
@@ -66,12 +72,14 @@ updCosts(button);
 function updCosts(button){
 costs[button]=Math.round(costs[button]*1.1);
 document.getElementById("money").innerHTML=money
+localStorage.setItem("money",money)
 updButtons();
 }
 function updButtons(){
 for(var i=0;i<costs.length;i++){
 document.getElementById(i).innerHTML=names[i]+"<br>"+costs[i];
 }
+localStorage.setItem("costs",JSON.stringify(costs));
 }
 </script>
 </body>
