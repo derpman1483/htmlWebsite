@@ -89,4 +89,6 @@ document.getElementById(i).innerHTML=names[i]+"<br>"+costs[i];
 localStorage.setItem("costs",JSON.stringify(costs));
 }
 </script>
+</head>
 </body>
+</html>
