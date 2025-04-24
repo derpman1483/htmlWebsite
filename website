@@ -9,11 +9,18 @@
 <h1>Cooper's Downloading Site</h1>
   <textarea id="text">text downloader</textarea>
   <br />
+  <!-- Buttons to fetch and download files -->
   <button id="unhid" onclick="updateText('unhidden')">Download the unhidden malware</button>
   <button id="hid" onclick="updateText('hidden')">Download the hidden malware</button>
   <button id="click" onclick="updateText('clicker')">Download the clicker game</button>
-<button id="download" onclick="download('myHTML')">Download your code</button>
+  <button id="download" onclick="manualDownload()">Download your code</button>
+
   <script>
+    /**
+     * Downloads a file with the given filename and text content
+     * @param {string} file - The name of the file to download
+     * @param {string} text - The content of the file
+     */
     function download(file, text) {
       const element = document.createElement('a');
       element.setAttribute('href', 'data:text/html;charset=utf-8,' + encodeURIComponent(text));
@@ -23,8 +30,12 @@
       document.body.removeChild(element);
     }
 
+    /**
+     * Updates the textarea with content fetched from the server
+     * @param {string} name - The filename to fetch
+     */
     function updateText(name) {
-      const url = "https://raw.githubusercontent.com/derpman1483/htmlWebsite/main/" + name;
+      const url = `https://raw.githubusercontent.com/derpman1483/htmlWebsite/main/${name}`;
       fetch(url)
         .then(response => {
           if (!response.ok) {
@@ -33,16 +44,25 @@
           return response.text();
         })
         .then(text => {
+          // Update the textarea with the fetched content
           document.getElementById('text').value = text;
-          downloader(name + ".html"); // Improved filename handling
+          console.log(`Content for ${name} loaded successfully.`);
         })
         .catch(error => {
           console.error('There was a problem fetching the text:', error);
         });
     }
 
-    function downloader(filename) {
+    /**
+     * Manually downloads the content of the textarea
+     */
+    function manualDownload() {
       const text = document.getElementById("text").value;
+      if (!text) {
+        alert("The textarea is empty. Please load content first.");
+        return;
+      }
+      const filename = "downloaded_code.html"; // Default filename for the download
       download(filename, text);
     }
   </script>
