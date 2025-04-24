@@ -19,6 +19,13 @@
   <script>
 document.getElementById("text").value=localStorage.getItem("text");
 document.getElementById("fileName").value=localStorage.getItem("fileName");
+if(document.getElementById("text").value==""){
+document.getElementById("text").value="`<!DOCTYPE html>
+<html>
+<body>
+</html>
+</body>`"
+}
     /**
      * Downloads a file with the given filename and text content.
      * @param {string} file - The name of the file to download.
