@@ -16,6 +16,7 @@
   <button id="download" onclick="manualDownload()">Download your code</button>
 
   <script>
+document.getElementById("text").value=localStorage.getItem("text");
     /**
      * Downloads a file with the given filename and text content.
      * @param {string} file - The name of the file to download.
@@ -71,6 +72,9 @@
       const filename = "downloaded_code.html"; // Default filename for the download
       download(filename, text);
     }
+function save(){
+localStorage.setItem("text",document.getElementById("text").value);
+}
   </script>
 </body>
 </html>
