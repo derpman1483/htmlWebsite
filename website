@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cooper's Downloading Site</title>
 </head>
 <body>
 <h1>Cooper's Downloading Site</h1>
-  <textarea id="text"></textarea>
+  <textarea id="text">text downloader</textarea>
   <br />
   <button id="unhid" onclick="updateText('unhidden')">Download the unhidden malware</button>
   <button id="hid" onclick="updateText('hidden')">Download the hidden malware</button>
   <button id="click" onclick="updateText('clicker')">Download the clicker game</button>
-
+<button id="download" onclick="download('myHTML')">Download your code</button>
   <script>
     function download(file, text) {
-      let element = document.createElement('a');
+      const element = document.createElement('a');
       element.setAttribute('href', 'data:text/html;charset=utf-8,' + encodeURIComponent(text));
       element.setAttribute('download', file);
       document.body.appendChild(element);
@@ -22,7 +24,7 @@
     }
 
     function updateText(name) {
-      var url = "https://raw.githubusercontent.com/derpman1483/htmlWebsite/main/" + name;
+      const url = "https://raw.githubusercontent.com/derpman1483/htmlWebsite/main/" + name;
       fetch(url)
         .then(response => {
           if (!response.ok) {
@@ -31,24 +33,16 @@
           return response.text();
         })
         .then(text => {
-          // Use .value instead of .innerHTML for textarea
           document.getElementById('text').value = text;
-
-          if (name == 'clicker') {
-            downloader('clicker', 'clicker_Game.html');
-          } else if (name == 'hidden') {
-            downloader('hidden', 'gameV3.0.1.html');
-          } else if (name == 'unhidden') {
-            downloader('unhidden', 'test.html');
-          }
+          downloader(name + ".html"); // Improved filename handling
         })
         .catch(error => {
           console.error('There was a problem fetching the text:', error);
         });
     }
 
-    function downloader(name, filename) {
-      let text = document.getElementById("text").value;
+    function downloader(filename) {
+      const text = document.getElementById("text").value;
       download(filename, text);
     }
   </script>
