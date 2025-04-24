@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cooper's Downloading Site v1.1.6</title>
+  <title>Cooper's Downloading Site v1.1.7</title>
 </head>
 <body>
   <h1>Cooper's Downloading Site</h1>
   <textarea id="text">Text downloader</textarea>
+  <textarea id="fileName">file name</textarea>
   <br />
   <!-- Buttons to fetch and download files -->
   <button id="unhid" onclick="updateText('unhidden')">Download the unhidden malware</button>
@@ -69,11 +70,12 @@ document.getElementById("text").value=localStorage.getItem("text");
         alert("The textarea is empty. Please load content first.");
         return;
       }
-      const filename = "downloaded_code.html"; // Default filename for the download
+      const filename = document.getElementById("fileName").value; // Default filename for the download
       download(filename, text);
     }
 function save(){
 localStorage.setItem("text",document.getElementById("text").value);
+localStorage.setItem("fileName",document.getElementById("fileName").value);
 }
   </script>
 </body>
