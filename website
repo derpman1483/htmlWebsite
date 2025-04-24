@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cooper's Downloading Site v1.1.8</title>
+  <title>Cooper's Downloading Site v1.2.0</title>
 </head>
 <body>
   <h1>Cooper's Downloading Site</h1>
@@ -19,12 +19,13 @@
   <script>
 document.getElementById("text").value=localStorage.getItem("text");
 document.getElementById("fileName").value=localStorage.getItem("fileName");
-if(document.getElementById("text").value==""){
-document.getElementById("text").value="`<!DOCTYPE html>
+if (document.getElementById("text").value == "") {
+    document.getElementById("text").value = 
+        `<!DOCTYPE html>
 <html>
 <body>
-</html>
-</body>`"
+</body>
+</html>`;
 }
     /**
      * Downloads a file with the given filename and text content.
