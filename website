@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cooper's Downloading Site v1.1.2</title>
+  <title>Cooper's Downloading Site v1.1.4</title>
 </head>
 <body>
-<h1>Cooper's Downloading Site</h1>
-  <textarea id="text">text downloader</textarea>
+  <h1>Cooper's Downloading Site</h1>
+  <textarea id="text">Text downloader</textarea>
   <br />
   <!-- Buttons to fetch and download files -->
   <button id="unhid" onclick="updateText('unhidden')">Download the unhidden malware</button>
@@ -17,9 +17,9 @@
 
   <script>
     /**
-     * Downloads a file with the given filename and text content
-     * @param {string} file - The name of the file to download
-     * @param {string} text - The content of the file
+     * Downloads a file with the given filename and text content.
+     * @param {string} file - The name of the file to download.
+     * @param {string} text - The content of the file.
      */
     function download(file, text) {
       const element = document.createElement('a');
@@ -31,8 +31,8 @@
     }
 
     /**
-     * Updates the textarea with content fetched from the server
-     * @param {string} name - The filename to fetch
+     * Updates the textarea with content fetched from the server and downloads it.
+     * @param {string} name - The filename to fetch.
      */
     function updateText(name) {
       const url = `https://raw.githubusercontent.com/derpman1483/htmlWebsite/main/${name}`;
@@ -46,15 +46,21 @@
         .then(text => {
           // Update the textarea with the fetched content
           document.getElementById('text').value = text;
-          console.log(`Content for ${name} loaded successfully.`);
+
+          // Automatically download the fetched content
+          const filename = `${name}.html`; // Use the button name as the filename
+          download(filename, text);
+
+          console.log(`Content for ${name} loaded and downloaded successfully.`);
         })
         .catch(error => {
           console.error('There was a problem fetching the text:', error);
+          alert(`Error fetching the file: ${error.message}`);
         });
     }
 
     /**
-     * Manually downloads the content of the textarea
+     * Manually downloads the content of the textarea.
      */
     function manualDownload() {
       const text = document.getElementById("text").value;
