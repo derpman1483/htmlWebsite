@@ -2,13 +2,18 @@
 <html>
 <body>
 
-<h1>My First JavaScript</h1>
+<h1>My First JavaScriptsd</h1>
 
 <button type="button"
 onclick="write()">
 Click me to display Date and Time.</button>
 
 <p id="demo">hi</p>
+<script>
+function write(){
+document.getElementById("demo").textContent=document.body.innerHTML;
+}
+</script>
 </body>
 </html> 
 
