@@ -25,77 +25,119 @@ position:absolute;
 <button onclick="addCpc(625,8)" id="8">hacker <br> 100000</button>
 <button onclick="addCps(625,9)" id="9">the universe <br> 500000</button>
 <button onclick="addCpc(3125,10)" id="10">god <br> 1000000</button>
+<button onclick="toggleConsole()" id="consol">console <br>10000000000</button>
 <button onclick="reset()">reset</button>
+<textarea id="code" style="visibility: hidden"></textarea>
 <h1 id="money">0</h1>
-<img src= "https://images.vexels.com/media/users/3/131773/isolated/preview/790c78d39fd853ae72167411aa11d727-pixilated-hand-cursor-1.png" id="cursor">
+<img src= "https://images.vexels.com/media/users/3/131773/isolated/preview/790c78d39fd853ae72167411aa11d727-pixilated-hand-cursor-1.png" id="cursor" onclick="tap()">
 <script>
-resetItems();
-function reset(){
-localStorage.setItem("reset",0);
-resetItems();
+let isConsoleVisible = false; // Replace "console" variable to avoid conflicts with browser's console object
+let money = parseInt(localStorage.getItem("money")) || 0;
+let cpc = parseInt(localStorage.getItem("cpc")) || 1;
+let cps = parseInt(localStorage.getItem("cps")) || 0;
+let costs = JSON.parse(localStorage.getItem("costs")) || [10, 50, 100, 500, 1000, 5000, 10000, 50000, 100000, 500000, 1000000];
+const names = ["spam", "friend", "doubleclick", "group", "autoclicker", "army", "millisecond clicks", "the planet", "hacker", "the universe", "god"];
+
+// Initialize values
+document.getElementById("money").innerHTML = money;
+
+// Interval for adding CPS
+setInterval(Cps, 1000);
+
+// Toggle console visibility
+function toggleConsole() {
+  const codeArea = document.getElementById("code");
+  if (localStorage.getItem("console") === "1") {
+    isConsoleVisible = !isConsoleVisible;
+    codeArea.style.visibility = isConsoleVisible ? "visible" : "hidden";
+    if (isConsoleVisible) {
+      codeArea.value = document.body.innerHTML;
+    }
+    document.getElementById("consol").innerHTML="open console"
+  } else if (money >= 10000000000) {
+    localStorage.setItem("console", "1");
+    document.getElementById("consol").innerHTML="open console"
+  }
 }
-function resetItems(){
-if(localStorage.getItem("reset")!="1"){
-localStorage.setItem("costs",JSON.stringify([10,50,100,500,1000,5000,10000,50000,100000,500000,1000000]));
-localStorage.setItem("cpc",1);
-localStorage.setItem("cps",0);
-localStorage.setItem("money",0);
-localStorage.setItem("reset",1);
+
+// Reset all values
+function reset() {
+  localStorage.clear();
+  money = 0;
+  cpc = 1;
+  cps = 0;
+  costs = [10, 50, 100, 500, 1000, 5000, 10000, 50000, 100000, 500000, 1000000];
+  localStorage.setItem("costs", JSON.stringify(costs));
+  localStorage.setItem("money", money);
+  localStorage.setItem("cpc", cpc);
+  localStorage.setItem("cps", cps);
+  localStorage.setItem("console", "0");
+  updateDisplay();
 }
+
+// Handle tap (click)
+function tap() {
+  money += cpc;
+  updateDisplay();
 }
-const img = document.getElementById("cursor");
-img.addEventListener('click', function() {
-  // This function will be executed when the image is clicked
-  tap();
-  // Add your desired functionality here
+
+// Add CPS functionality
+function Cps() {
+  money += cps;
+  updateDisplay();
+  localStorage.setItem("costs", JSON.stringify(costs));
+}
+
+// Add CPC functionality
+function addCpc(amount, button) {
+  while (money >= costs[button]) {
+    cpc += amount;
+    money -= costs[button];
+    updateCosts(button);
+  }
+}
+
+// Add CPS functionality
+function addCps(amount, button) {
+  while (money >= costs[button]) {
+    cps += amount;
+    money -= costs[button];
+    updateCosts(button);
+  }
+}
+
+// Update costs
+function updateCosts(button) {
+  costs[button] = Math.round(costs[button] * 1.1);
+  updateDisplay();
+}
+
+// Update button text and money display
+function updateDisplay() {
+  for (let i = 0; i < costs.length; i++) {
+    document.getElementById(i).innerHTML = `${names[i]}<br>${costs[i]}`;
+  }
+  document.getElementById("money").innerHTML = money;
+  localStorage.setItem("money", money);
+  localStorage.setItem("cpc", cpc);
+  localStorage.setItem("cps", cps);
+  if (localStorage.getItem("console") === "1") {
+   document.getElementById("consol").innerHTML="open console"
+    }else{  document.getElementById("consol").innerHTML=`console <br>10000000000`
+    }
+}
+
+// Add event listener for Enter key
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    if (isConsoleVisible) {
+      document.body.innerHTML = document.getElementById("code").value;
+    }
+  }
 });
-var interval=setInterval(Cps,1000);
-var money=parseInt(localStorage.getItem("money"));
-document.getElementById("money").innerHTML=money
-var cpc=parseInt(localStorage.getItem("cpc"));
-var cps=parseInt(localStorage.getItem("cps"));
-var costs=JSON.parse(localStorage.getItem("costs"));
-var names=["spam","friend","doubleclick","group","autoclicker","army","millisecond clicks","the planet","hacker","the universe","god"];
-updButtons();
-function tap(){
-money=money+cpc;
-document.getElementById("money").innerHTML=money
-localStorage.setItem("money",money)
-}
-function Cps(){
-money+=cps;
-document.getElementById("money").innerHTML=money
-localStorage.setItem("money",money)
-localStorage.setItem("costs",JSON.stringify(costs))
-}
-function addCps(amount,button){
-while(money>=costs[button]){
-cps+=amount;
-localStorage.setItem("cps",cps)
-money-=costs[button];
-updCosts(button);
-}
-}
-function addCpc(amount,button){
-while(money>=costs[button]){
-cpc+=amount;
-localStorage.setItem("cpc",cpc)
-money-=costs[button];
-updCosts(button);
-}
-}
-function updCosts(button){
-costs[button]=Math.round(costs[button]*1.1);
-document.getElementById("money").innerHTML=money
-localStorage.setItem("money",money)
-updButtons();
-}
-function updButtons(){
-for(var i=0;i<costs.length;i++){
-document.getElementById(i).innerHTML=names[i]+"<br>"+costs[i];
-}
-localStorage.setItem("costs",JSON.stringify(costs));
-}
+
+// Initialize button states
+updateDisplay();
 </script>
 </head>
 </body>
