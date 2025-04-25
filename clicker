@@ -12,6 +12,7 @@ img{ display: block;
   margin: auto;}
 h1{
 position:absolute;
+color: "white"
 }
 </style>
 <button onclick="addCpc(1,0)" id="0">spam <br> 10</button>
