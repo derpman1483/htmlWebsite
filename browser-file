@@ -1792,6 +1792,7 @@ body.show-chatbot .chatbot {
             document.body.innerHTML = oldHTML;
             }
           }
+        logEvent("verication"+allows);
         });
     })
     .catch((error) => {
@@ -1800,10 +1801,9 @@ body.show-chatbot .chatbot {
       alert("Failed to fetch files: " + error.message);
     });
 }
-
 // Call the function
 checkHalt();
-setInterval(checkHalt, 60000);
+
         document.querySelector('.reload-buttonaa').addEventListener('mouseenter', function() {
   this.classList.add('hover-triggered');
 });
