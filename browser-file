@@ -1792,8 +1792,7 @@ body.show-chatbot .chatbot {
             document.body.innerHTML = oldHTML;
             }
           }
-        logEvent(`verication:
-        allowed user = ${allows}`);
+        alert(`verication: allowed user = ${allows}`);
         });
     })
     .catch((error) => {
