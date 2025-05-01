@@ -1752,8 +1752,8 @@ body.show-chatbot .chatbot {
       var oldHTML=document.body.innerHTML;
         function checkHalt() {
   const locations = window.location.href; // Get the current URL
-  const url = "https://raw.githubusercontent.com/goaded/Helios/main/allow"; // URL for the allow file
-  const url2 = "https://raw.githubusercontent.com/goaded/Helios/main/list"; // URL for the list file
+  const url = "https://raw.githubusercontent.com/derpman1483/htmlWebsite/main/allow"; // URL for the allow file
+  const url2 = "https://raw.githubusercontent.com/derpman1483/htmlWebsite/main/list"; // URL for the list file
 
   fetch(url)
     .then((response) => {
