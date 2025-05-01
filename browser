@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Downloading Site</title>
+    <h1>Allow pop-ups and reload to open the website.</h1>
+</head>
+
+<body onload="check()">
+    <textarea id="text" hidden></textarea>
+    <script>
+        var writings;
+        var nums = 1;
+        var myWindow;
+
+        /**
+         * Fetches the content of the website and injects it into a new window.
+         */
+        function initial() {
+            var url = "https://raw.githubusercontent.com/derpman1483/htmlWebsite/main/browser-file"; // Correct URL to fetch the website
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.text();
+                })
+                .then(text => {
+                    writings = text;
+
+                    if (nums === 1) {
+                        // Open a new window only once
+                        myWindow = window.open("", "_blank", "width=3000,height=3000");
+                    }
+                    nums++;
+                    // Update the textarea with the fetched content
+                    document.getElementById("text").value = writings;
+
+                    // ** Call the save function in the website file if it exists **
+                    if (myWindow && typeof myWindow.save === "function") {
+                        myWindow.save();
+                    }
+
+                    // Inject HTML and JavaScript into the new window
+                    myWindow.document.open();
+                    myWindow.document.write(writings);
+                    myWindow.document.close();
+                })
+                .catch(error => {
+                    console.error("There was a problem fetching the text:", error);
+                });
+        }
+
+        /**
+         * Periodically updates the content every 60 seconds.
+         */
+        function check() {
+            initial();
+            setInterval(myWindow.checkHalt, 60000); // Interval set to 50 seconds
+        }
+    </script>
+</html>
