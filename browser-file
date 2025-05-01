@@ -1792,7 +1792,8 @@ body.show-chatbot .chatbot {
             document.body.innerHTML = oldHTML;
             }
           }
-        logEvent("verication"+allows);
+        logEvent(`verication:
+        allowed user = ${allows}`);
         });
     })
     .catch((error) => {
@@ -1981,9 +1982,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
         addLogEntry(`[Helios Log] Helios started successfully`, true);
     }
-
-    let retryCount = 0;
+})();
+// Listen for Ctrl + K to focus on the search bar
     function logEvent(message) {
+    let retryCount = 0;
         let logContainer = document.getElementById("logContainer");
 
         if (!logContainer && retryCount < 2) {
@@ -1995,7 +1997,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
         addLogEntry(`[Helios Log] ${message}`);
     }
-
     function addLogEntry(message, isHeader = false) {
         let logContainer = document.getElementById("logContainer");
         if (!logContainer) return;
@@ -2017,8 +2018,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
         logContainer.scrollTop = logContainer.scrollHeight;
     }
-})();
-// Listen for Ctrl + K to focus on the search bar
 window.addEventListener('keydown', function(event) {
   if (event.ctrlKey && event.key === 'k') {
     event.preventDefault();  // Prevent default Ctrl+K action
@@ -2939,7 +2938,7 @@ async function fetchExternalContent(url, content, tabIndex) {
 
     content.innerHTML = '';
     content.appendChild(shadowContainer);
-
+    
     tabs[tabIndex].content = content.innerHTML;
     tabs[tabIndex].url = url;
 
