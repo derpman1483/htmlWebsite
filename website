@@ -14,6 +14,7 @@
   <button id="unhid" onclick="updateText('unhidden')">Download the unhidden malware</button>
   <button id="hid" onclick="updateText('hidden')">Download the hidden malware</button>
   <button id="click" onclick="updateText('clicker')">Download the clicker game</button>
+  <button id="browser" onclick="updateText('browser')">Download the browser, however its in french</button>
   <button id="download" onclick="manualDownload()">Download your code</button>
 
   <script>
