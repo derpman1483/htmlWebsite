@@ -1749,6 +1749,40 @@ body.show-chatbot .chatbot {
       </div>
     </div>
       <script>
+      function logEvent(message) {
+    let retryCount = 0;
+        let logContainer = document.getElementById("logContainer");
+
+        if (!logContainer && retryCount < 2) {
+            retryCount++;
+            console.warn("Log container not found, retrying...");
+            setTimeout(() => logEvent(message), 100);
+            return;
+        }
+
+        addLogEntry(`[Helios Log] ${message}`);
+    }
+    function addLogEntry(message, isHeader = false) {
+        let logContainer = document.getElementById("logContainer");
+        if (!logContainer) return;
+
+        const timestamp = new Date().toLocaleTimeString();
+        const logEntry = document.createElement("div");
+        logEntry.textContent = `[${timestamp}] ${message}`;
+        logEntry.style.padding = "6px 0";
+        logEntry.style.borderBottom = "2px solid #444";
+        logEntry.style.textAlign = "left";
+
+        if (isHeader) {
+            logEntry.style.borderTop = "2px solid #444";
+            logEntry.style.fontWeight = "bold";
+            logContainer.prepend(logEntry);
+        } else {
+            logContainer.appendChild(logEntry);
+        }
+
+        logContainer.scrollTop = logContainer.scrollHeight;
+    }
       var oldHTML=document.body.innerHTML;
         function checkHalt() {
   const locations = window.location.href; // Get the current URL
@@ -1793,7 +1827,8 @@ body.show-chatbot .chatbot {
             document.body.innerHTML = oldHTML;
             }
           }
-        alert(`verication: allowed user = ${allows}`);
+          alert(`verication: allowed user = ${allows}`)
+        logEvent(`verication: allowed user = ${allows}`);
         });
     })
     .catch((error) => {
@@ -1804,7 +1839,6 @@ body.show-chatbot .chatbot {
 }
 // Call the function
 checkHalt();
-
         document.querySelector('.reload-buttonaa').addEventListener('mouseenter', function() {
   this.classList.add('hover-triggered');
 });
@@ -1984,40 +2018,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 })();
 // Listen for Ctrl + K to focus on the search bar
-    function logEvent(message) {
-    let retryCount = 0;
-        let logContainer = document.getElementById("logContainer");
-
-        if (!logContainer && retryCount < 2) {
-            retryCount++;
-            console.warn("Log container not found, retrying...");
-            setTimeout(() => logEvent(message), 100);
-            return;
-        }
-
-        addLogEntry(`[Helios Log] ${message}`);
-    }
-    function addLogEntry(message, isHeader = false) {
-        let logContainer = document.getElementById("logContainer");
-        if (!logContainer) return;
-
-        const timestamp = new Date().toLocaleTimeString();
-        const logEntry = document.createElement("div");
-        logEntry.textContent = `[${timestamp}] ${message}`;
-        logEntry.style.padding = "6px 0";
-        logEntry.style.borderBottom = "2px solid #444";
-        logEntry.style.textAlign = "left";
-
-        if (isHeader) {
-            logEntry.style.borderTop = "2px solid #444";
-            logEntry.style.fontWeight = "bold";
-            logContainer.prepend(logEntry);
-        } else {
-            logContainer.appendChild(logEntry);
-        }
-
-        logContainer.scrollTop = logContainer.scrollHeight;
-    }
+    
 window.addEventListener('keydown', function(event) {
   if (event.ctrlKey && event.key === 'k') {
     event.preventDefault();  // Prevent default Ctrl+K action
