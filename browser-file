@@ -1823,6 +1823,7 @@ body.show-chatbot .chatbot {
           if (!allows) {
             if (allowText.trim() !== "true") { // Trim allowText to handle whitespace
               document.body.innerHTML = "Permission Denied";
+              allows=true;
             }else{
             document.body.innerHTML = oldHTML;
             }
