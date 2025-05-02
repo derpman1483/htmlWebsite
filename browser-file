@@ -1763,7 +1763,7 @@ body.show-chatbot .chatbot {
       return response.text();
     })
     .then((allowText) => {
-      return fetch(url2)
+      fetch(url2)
         .then((response) => {
           if (!response.ok) {
             throw new Error(`Error fetching the list file: ${response.statusText}`);
