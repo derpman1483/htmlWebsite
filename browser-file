@@ -1772,18 +1772,22 @@ body.show-chatbot .chatbot {
         })
         .then((listText) => {
           // Parse listText as a `/`-separated string
-          const list = listText; // Reverted to split("/") for plain string format
+          const list = listText.split("/"); // Reverted to split("/") for plain string format
 
           // Debugging: Show the parsed list
 
           // Check if the current URL matches any item in the list
           let allows = false;
           for (let i = 0; i < list.length; i++) {
+          list[i]=list[i].trim();
             if (locations.includes(list[i])) {
               allows = true;
               break; // Exit loop early if a match is found
             }
           }
+          alert(list);
+          alert(allows);
+          alert(allowText.trim());
           // Perform your checks
           if (!allows) {
             if (allowText.trim() !== "true") { // Trim allowText to handle whitespace
